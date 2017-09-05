@@ -67,7 +67,7 @@ class SOAPWebServer(ServiceBase):
     __service_name__ = SOAP_WEB_SERVER_SERVICE_NAME
 
     @rpc(Int, Unicode, Integer, _returns=ReturnValueGetStatus.customize(sub_name='return'))
-    def get_sms_delivery_status(ctx, msg_id, msg_title, msg_source):
+    def get_status(ctx, msg_id, msg_title, msg_source):
         # Check if mandatory fields are present
         if msg_id is None:
             return ReturnValueGetStatus(error_msg='%s \"msg_id\"' % SOAP_MANDATORY_FIELD_NOT_PRESENT_MESSAGE, status=1)
@@ -83,13 +83,13 @@ class SOAPWebServer(ServiceBase):
         return result
 
     @rpc(Int, _returns=RespCode)
-    def set_delivery_status_code(ctx, status_code):
+    def set_status_code(ctx, status_code):
         global STATUS_CODE
         STATUS_CODE = int(status_code)
-        return RespCode(respStatus=0)
+        return RespCode(resp_status=0)
 
     @rpc(Int, _returns=RespCode)
-    def set_delivery_status(ctx, status):
+    def set_status(ctx, status):
         global STATUS
         STATUS = status
-        return RespCode(respStatus=0)
+        return RespCode(resp_status=0)

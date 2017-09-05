@@ -27,5 +27,5 @@ Including another URLconf
 
 
 urlpatterns = [
-    url(r'^smsgateway/', include('soapwebservice.urls')),
+    url(r'^', include('soapwebservice.urls')),
 ]
