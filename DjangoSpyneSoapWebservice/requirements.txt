@@ -1,0 +1,6 @@
+PySimpleSOAP==1.16
+lxml==3.7.3
+requests==2.13.0
+spyne==2.12.14
+rstr==2.2.6
+django==1.11.3
