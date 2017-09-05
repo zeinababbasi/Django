@@ -76,8 +76,8 @@ class SOAPWebServer(ServiceBase):
         if re.match(r'^\d+$', str(msg_id)) is None:
             return SOAPWebServerException(message='%s \"%s\"' % (SOAP_INVALID_STRING_VALUE_MESSAGE, str(msg_id)))
 
-        deliver_date = str(int(time.time()))
-        report_item = Status(status_date=deliver_date, status=STATUS_CODE,
+        status_date = str(int(time.time()))
+        report_item = Status(status_date=status_date, status=STATUS_CODE,
                              msg_id=msg_id, msg_title=msg_title, msg_source=msg_source)
         result = ReturnValueGetStatus(status=0, repor_item=report_item)
         return result
