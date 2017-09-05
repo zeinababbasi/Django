@@ -10,5 +10,5 @@ __author__ = "Zeinab Abbasimazar -> https://github.com/zeinababbasi"
 
 
 urlpatterns = [
-    url(r'^services/SendSms', views.soapwebservice),
+    url(r'^services/soapwebservice', views.soapwebservice),
 ]
