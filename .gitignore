@@ -99,3 +99,7 @@ ENV/
 
 # mypy
 .mypy_cache/
+
+# added by Zeinab Abbasimazar (https://github.com/zeinababbasi); date: 5 September 2017 09:50:00 AM
+.idea
+
